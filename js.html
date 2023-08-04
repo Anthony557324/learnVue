@@ -16,17 +16,21 @@
       const btnEl = document.getElementById('btn')
       const resultEl = document.getElementById('result')
   
-      function handleClick() {
-        console.log(questionEl.value)
+      function handleClick(e) {
+        const val = e.target.value
+
+        // console.log(questionEl.value)
+        resultEl.textContent = val
         // 网络请求
-        setTimeout(() => {
-          resultEl.textContent = questionEl.value + '后端返回点东西'
-        }, 500);
+        // setTimeout(() => {
+        //   resultEl.textContent = questionEl.value + '后端返回点东西'
+        // }, 500);
       }
   
+      questionEl.addEventListener('input',handleClick)
       btnEl.addEventListener('click', handleClick)
-      btnEl.addEventListener('click', handleClick)
-      btnEl.removeEventListener('click', handleClick)
+    //   btnEl.addEventListener('click', handleClick)
+    //   btnEl.removeEventListener('click', handleClick)
   
       // function $(id) {
       //   return document.getElementById(id)
